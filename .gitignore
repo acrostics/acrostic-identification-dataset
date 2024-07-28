@@ -2,5 +2,6 @@
 ru/
 fr/
 en/
+.DS_Store
 *.xml
 *.bz2

@@ -1,7 +1,7 @@
 # Acrostic Identification Task Dataset
 
 **Acrostic Identification Task Dataset** is a curated collection of acrostics from the English, Russian, and French subdomains of the WikiSource database.
-The dataset is intended for evaluation of tools such as [AcrosticFinder](), which aim to identify acrostics from large corpora of texts.
+The dataset is intended for evaluation of tools such as [AcrosticFinder](https://github.com/acrostics/acrostic-finder), which aim to identify acrostics from large corpora of texts.
 You can read more about the methodology in our upcoming paper ([preprint]()).
 
 ### Table of Contents
@@ -42,6 +42,15 @@ These will include:
 - [May 1st 2024 dump of the Russian WikiSource](https://dumps.wikimedia.org/ruwikisource/20240501/ruwikisource-20240501-pages-meta-current.xml.bz2)
 
 To score a tool's predictions against the manually created labels, use the `scorer.py` script.
+The script will produce a figure that plots recall vs # of results, like you see below ([What is the state-of-the-art result?](#what-is-the-state-of-the-art-result)).
+The script accepts an arbitrary number of 4-element comma-separated tuples, where each tuple consists of 
+(i) language code, (ii) label file from this repository, (iii) file with predictions, and (iv) name of the comparison
+
+For example, to produce the figure below, we have run the following command (where predictions in the output directory are produced by AcrosticFinder):
+
+```bash
+python3 scorer.py EN,labels/en.tsv,../../output/en72900.tsv,English RU,labels/ru.tsv,../../output/ru72900.tsv,Russian FR,labels/fr.tsv,../../output/fr72900.tsv,French
+```
 
 ## Categories of acrostics
 
@@ -49,7 +58,12 @@ The following is a list of abbreviations/labels we use to categorize acrostics.
 
 - m is for "mentioned" -- an acrostic explicitly referenced as such on WikiSource.
 - f is for "formated" -- an acrostic formatted as such on WikiSource (initial letters of a poem are highlighted in red, rotated by 90 degrees, etc.) 
-- s is for "split" -- an acrostic that is split between multiple WikiSource pages. An acrostic annotated with 's' continues on the next line in the results file.
+- s is for "split" -- this abbreviation is used to identify separate acrostics that should be counted as one for evaluation purposes.
+This happens when either of the following is true:
+(i) a single acrostic is split between multiple WikiSource pages,
+(ii) two separate acrostics are located very close to each other on the same WikiSource page (we chose to use within 10 lines as the criterion), or
+(iii) the same acrostic poem is reproduced multiple times on different WikiSource pages. 
+During evaluation, all such "split" acrostics are counted as a single true positive if the tool identifies at least one part or as a single false negative if the tool does not identify either part.
 
 Note: the following additional abbreviations automatically prevent `scorer.py` from using the acrostic during scoring to maintain fairness:
 - i is for "international" -- acrostic in a language that is different from the base language of the text. 
@@ -62,7 +76,7 @@ Note: the following additional abbreviations automatically prevent `scorer.py` f
 
 ## What is the state of the art result?
 
-[AcrosticFinder]() reaches recall of over 60% within the first 100 results it returns, and recall rises to up to 80% when considering more results.
+[AcrosticFinder](https://github.com/acrostics/acrostic-finder) reaches recall of over 60% within the first 100 results it returns, and recall rises to up to 80% when considering more results.
 Read more in our [paper]():
 
 ![](RecallFigure.png)
