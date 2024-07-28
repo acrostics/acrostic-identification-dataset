@@ -1,6 +1,5 @@
 type	acrostic	page
 mi	Francyna	Utilisateur:Zephyrus/Don Quichotte2n
-me	Anna	Page:Enciclopedia popolare italiana, 1871.djvu/525
 m	Luce	Ambigu lyrique
 m	Vjllone	Page:Œuvres complètes de François Villon.djvu/84
 ms	Fr	Page:Œuvres complètes de François Villon.djvu/85
@@ -38,13 +37,21 @@ mfs	Julie	Page:Larousse - Grand dictionnaire universel du XIXe siècle - Tome 1,
 mfs	Napoleon	Page:Larousse - Grand dictionnaire universel du XIXe siècle - Tome 1, part. 1, A-Am.djvu/160
 ms	Louis	Page:Larousse - Grand dictionnaire universel du XIXe siècle - Tome 1, part. 1, A-Am.djvu/160
 ms	Anna	Page:Larousse - Grand dictionnaire universel du XIXe siècle - Tome 1, part. 1, A-Am.djvu/160
-mi	Vivat	Page:Larousse - Grand dictionnaire universel du XIXe siècle - Tome 1, part. 1, A-Am.djvu/160
+mis	Vivat	Page:Larousse - Grand dictionnaire universel du XIXe siècle - Tome 1, part. 1, A-Am.djvu/160
+mes	Anna	Page:Enciclopedia popolare italiana, 1871.djvu/525
+ms	Louis	Page:Brossard - Correcteur typographe, 1934.djvu/627
+ms	Anna	Page:Brossard - Correcteur typographe, 1934.djvu/628
+mfs	Vivent les annales 	Page:Brossard - Correcteur typographe, 1934.djvu/628
+fs	Anna	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/235
+fs	Petro	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/235
+mf	Vivent	Page:Brossard - Correcteur typographe, 1934.djvu/627
 mo	Magdelene Boctojs	Page:Le Petit - Les Œuvres libertines, éd. Lachèvre, 1918.djvu/143
 m	Aline	Page:Louÿs - Les aventures du roi Pausole, 1901.djvu/389
 mf	Deux Gougnottes	La femme (Louÿs)
 msf	La Roysne	Page:Rutebeuf - Oeuvres complètes, recueillies par Jubinal, tome I, 1839.djvu/385
 mf	De France Marie n Madame Blanche	Page:Rutebeuf - Oeuvres complètes, recueillies par Jubinal, tome I, 1839.djvu/386
-m	Leocadie	Page:Boucherville - La tour de Trafalgar, L'Opinion publique, 30 juin 1870.djvu/12
+ms	Leocadie	Page:Boucherville - La tour de Trafalgar, L'Opinion publique, 30 juin 1870.djvu/12
+mf	Leocadie	Page:Répertoire national ou Recueil de littérature canadienne, compilé par J Huston, vol 1, 1848.djvu/283
 m	Cabal	Page:Bachelet - Dezobry - Dictionnaire général des lettres, des beaux-arts et des sciences morales et politiques.djvu/36
 m	Paris	Page:Lazare - Dictionnaire administratif et historique des rues de Paris et de ses monuments, 1844.djvu/214
 m	Francois de Harlai	Page:Tallemant des Réaux - Les historiettes, tome 3.djvu/151
@@ -58,21 +65,14 @@ mf	Bernard Hector de Marle	Page:L’Œuvre de P.-C. Blessebois, 1921.djvu/115
 m	Jesus	Page:Halgan - Anthologie des poetes bretons du 17e.djvu/281
 mi	Watomika	Page:Pere De Smet.djvu/319
 m	Les Cocus	Page:Pierre Le Loyer - La Néphélococugie, édition de 1869.djvu/26
-mf	Leocadie	Page:Répertoire national ou Recueil de littérature canadienne, compilé par J Huston, vol 1, 1848.djvu/283
-m	Louis	Page:Brossard - Correcteur typographe, 1934.djvu/627
-mf	Vivent	Page:Brossard - Correcteur typographe, 1934.djvu/627
-ms	Anna	Page:Brossard - Correcteur typographe, 1934.djvu/628
-mfs	Vivent les annales 	Page:Brossard - Correcteur typographe, 1934.djvu/628
 m	Maria	Page:Apollinaire - Le Poète assassiné, 1916.djvu/246
-m	Francois	Page:Crépet - Les Poëtes français, t2, 1861.djvu/289
+ms	Francois	Page:Crépet - Les Poëtes français, t2, 1861.djvu/289
+m	Francojs	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/232
 mif	Eleonor Chabotius	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/170
 mi	Carolus F	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/231
-m	Francojs	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/232
 mi	ΙΗΣΟΥΣ	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/233
 fi	Χρειστος	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/234
 f	Amphitruo	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/234
-fs	Anna	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/235
-f	Petro	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/235
 ms	Marie	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/240
 ms	Pierre	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/240
 ms	Ma	Page:Tabourot - Les Bigarrures et Touches du seigneur des Accords - 1640.djvu/240
@@ -82,7 +82,7 @@ mo	Gutenberg	Page:Vade-mecum du typographe (IA vademecumdutypog00dumo 0).pdf/164
 m	Valerfe	Page:Bonenfant - Canadiennes d'hier, lettres familières, 1941.djvu/38
 m	Herminie	Page:Verne - Premier et second carnets de poèmes, 1847.djvu/158
 m	Eva Cote	Page:Poitras - Refrains de jeunesse, 1894.djvu/56
-m	garat	Page:Monselet - Curiosités littéraires et bibliographiques, 1890.djvu/94
+ms	garat	Page:Monselet - Curiosités littéraires et bibliographiques, 1890.djvu/94
 m3	garat	Page:Monselet - Curiosités littéraires et bibliographiques, 1890.djvu/95
 m	ugusta	Page:Revue de l'histoire de Versailles et de Seine-et-Oise, année 1919.djvu/245
 f	marcelinedesbordesualmore	Page:Le Monument de Marceline Desbordes-Valmore, 1896.pdf/89
@@ -100,8 +100,8 @@ t	francoys martheos	Page:Œuvres de François Villon Thuasne 1923.djvu/233
 t	le vit 	Page:Les Plaisirs de l’ancien régime, et de tous les âges, 1795.djvu/68
 t	foutre▁pour▁uous	Page:Les Souspirs amoureux de F B de Verville 1589.djvu/102
 f	les veillees dun fouteur	Utilisateur:Cunegonde1/Brouillon
+fs	les veillees dun fouteur 	Page:Les veillées d’un fouteur, 1832.djvu/13
 t	Francois	Page:Variétés Tome III.djvu/93
-f	les veillees dun fouteur 	Page:Les veillées d’un fouteur, 1832.djvu/13
 t	Ambroise delore	Page:Œuvres de François Villon Thuasne 1923.djvu/253
 t	Iesous christos	Page:Guerne - Les Siècles morts, III, 1897.djvu/146
 t	Bertrand	Page:Charles d Orléans - Poésies complètes, Flammarion, 1915.djvu/259

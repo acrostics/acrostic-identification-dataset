@@ -80,9 +80,14 @@ def get_true_labels(truth_file, lang):
     true_labels = []
     join_with_previous = False  # cluster acrostics that are split into multiple files together to count them as one
     for result in results:
+        does_not_count_towards_recall = False
         for label in 'no23468itwe':
             if label in result[0]:
-                continue
+                does_not_count_towards_recall = True
+                break
+        if does_not_count_towards_recall:
+            join_with_previous = join_with_previous and 's' in result[0]
+            continue
         acrostic = re.sub(" ", "", format(result[1], lang))
         page = result[2]
         if not join_with_previous:

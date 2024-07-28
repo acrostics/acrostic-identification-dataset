@@ -68,10 +68,13 @@ During evaluation, all such "split" acrostics are counted as a single true posit
 Note: the following additional abbreviations automatically prevent `scorer.py` from using the acrostic during scoring to maintain fairness:
 - i is for "international" -- acrostic in a language that is different from the base language of the text. 
 - t is for "tool" -- acrostic found by AcrosticFinder (but not explicitly referred to or mentioned on WikiSource as an acrostic)
+Such acrostics should not be counted towards the tool's recall but could be counted toward precision.
 - 2,3,4,6,8, etc. identify acrostics formed by every second/third/etc. letter of each line
 - w is for "word-level" acrostic
 - e is for "end" acrostic aka telestic
-- n is for "not a true acrostic" -- an acrostic erroneously created during OCR; often this happens when the source text has a table with a vertical entry.
+- n is for "not a true acrostic" -- an acrostic erroneously created during OCR.
+Often this happens when the source text has a table with a vertical entry.
+Such "acrostics" should not be counted towards the tool's recall but could be counted toward precision.
 - o is for "omitted" -- a page that exists in a .djvu file and might be added to WikiSource in the future but is not present in the backup dump used to create the dataset.
 
 ## What is the state of the art result?
