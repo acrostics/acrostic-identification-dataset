@@ -95,7 +95,7 @@ def get_true_labels(truth_file, lang):
         else:
             true_labels[-1].append((acrostic,page))
         join_with_previous = 's' in result[0]
-
+    true_labels = [tuple(x) for x in true_labels]
     return true_labels
 
 
@@ -114,12 +114,13 @@ def get_recall(filename, truth_file, lang, log=False):
         to_remove = []
         for label in true_labels:
             for acrostic, page in label:
-                if acrostic in query or len(find_LCS(acrostic, query)) >= 5:
-                    if log:
-                        print(f"Hit {acrostic}")
-                    tp += 1
-                    to_remove.append(label)
+                if title == page and (acrostic in query or len(find_LCS(acrostic, query)) >= 5):
+                    if label not in to_remove:
+                        tp += 1
+                        to_remove.append(label)
         for label in to_remove:
+            if log:
+                print(f"Hit {label[0][0]}, k={k}, tp={tp}, all_tp={all_tp}, recall={tp / all_tp}")
             true_labels.remove(label)
         # if not to_remove and log and k < 2000:
             # print(f"Miss {candidate} ({query_full}) in {title}")
@@ -134,7 +135,7 @@ def get_recall(filename, truth_file, lang, log=False):
 def main(args):
     fig, ax = plt.subplots(layout='constrained')
     for language, labels, predictions, name in args.data:
-       recall = get_recall(predictions, labels, lang=language, log=False)
+       recall = get_recall(predictions, labels, lang=language, log=True)
        plt.plot(np.arange(len(recall)), recall, label=name, linestyle="--", linewidth=3)
 
     plt.legend(loc='upper left', fontsize=36)

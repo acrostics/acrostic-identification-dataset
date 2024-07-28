@@ -79,7 +79,7 @@ Such "acrostics" should not be counted towards the tool's recall but could be co
 
 ## What is the state of the art result?
 
-[AcrosticFinder](https://github.com/acrostics/acrostic-finder) reaches recall of over 60% within the first 100 results it returns, and recall rises to up to 80% when considering more results.
+[AcrosticFinder](https://github.com/acrostics/acrostic-finder) reaches recall of over 50% within the first 100 results for English and Russian, and recall rises to up to 80% when considering more results.
 Read more in our [paper]():
 
 ![](RecallFigure.png)
