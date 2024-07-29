@@ -43,13 +43,14 @@ These will include:
 
 To score a tool's predictions against the manually created labels, use the `scorer.py` script.
 The script will produce a figure that plots recall vs # of results, like you see below ([What is the state-of-the-art result?](#what-is-the-state-of-the-art-result)).
+The first argument should be the name of the figure to be created.
 The script accepts an arbitrary number of 4-element comma-separated tuples, where each tuple consists of 
 (i) language code, (ii) label file from this repository, (iii) file with predictions, and (iv) name of the comparison
 
 For example, to produce the figure below, we have run the following command (where predictions in the output directory are produced by AcrosticFinder):
 
 ```bash
-python3 scorer.py EN,labels/en.tsv,../../output/en72900.tsv,English RU,labels/ru.tsv,../../output/ru72900.tsv,Russian FR,labels/fr.tsv,../../output/fr72900.tsv,French
+python3 scorer.py RecallFigure.png EN,labels/en.tsv,../../output/en.tsv,English RU,labels/ru.tsv,../../output/ru.tsv,Russian FR,labels/fr.tsv,../../output/fr.tsv,French
 ```
 
 ## Categories of acrostics
@@ -82,7 +83,7 @@ Such "acrostics" should not be counted towards the tool's recall but could be co
 [AcrosticFinder](https://github.com/acrostics/acrostic-finder) reaches recall of over 50% within the first 100 results for English and Russian, and recall rises to up to 80% when considering more results.
 Read more in our [paper]():
 
-![](RecallFigure.png)
+![](RecallFigure.svg)
 
 ## How to cite this?
 

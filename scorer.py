@@ -135,7 +135,7 @@ def get_recall(filename, truth_file, lang, log=False):
 def main(args):
     fig, ax = plt.subplots(layout='constrained')
     for language, labels, predictions, name in args.data:
-       recall = get_recall(predictions, labels, lang=language, log=True)
+       recall = get_recall(predictions, labels, lang=language, log=args.verbose)
        plt.plot(np.arange(len(recall)), recall, label=name, linestyle="--", linewidth=3)
 
     plt.legend(loc='upper left', fontsize=36)
@@ -146,7 +146,7 @@ def main(args):
     ax.tick_params(axis='y', labelsize=36)  # Adjust as needed for the y-axis tick labels
     fig.set_size_inches(24, 16)
     ax.set_xscale('log')
-    plt.savefig('recall.png', dpi=600)
+    plt.savefig(args.name, dpi=600)
 
 
 def _is_prediction_tuple(tuple):
@@ -164,7 +164,11 @@ def _is_prediction_tuple(tuple):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(
         description="Plot recall vs # of results for a set of predictions made on the acrostic identification task dataset.")
+    p.add_argument("name", type=str,
+                   help="The name of the file to which the figure should be saved.")
     p.add_argument("data", nargs="+", type=_is_prediction_tuple,
                    help="Comma separated (language,labels_file,predictions_file,name) tuple")
+    p.add_argument('--verbose', action='store_true',
+                   help=f"Print some logging information about how recall is calculated.")
     args = p.parse_args(sys.argv[1:])
     main(args)
