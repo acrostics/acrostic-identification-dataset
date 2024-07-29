@@ -1,7 +1,7 @@
 # Acrostic Identification Task Dataset
 
 **Acrostic Identification Task Dataset** is a curated collection of acrostics from the English, Russian, and French subdomains of the WikiSource database.
-The dataset is intended for evaluation of tools such as [AcrosticScout](https://github.com/acrostics/acrostic-scout), which aim to identify acrostics from large corpora of texts.
+The dataset is intended for evaluation of tools such as [AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth), which aim to identify acrostics from large corpora of texts.
 You can read more about the methodology in our upcoming paper ([preprint]()).
 
 ### Table of Contents
@@ -47,7 +47,7 @@ The first argument should be the name of the figure to be created.
 The script accepts an arbitrary number of 4-element comma-separated tuples, where each tuple consists of 
 (i) language code, (ii) label file from this repository, (iii) file with predictions, and (iv) name of the comparison
 
-For example, to produce the figure below, we have run the following command (where predictions in the output directory are produced by AcrosticScout):
+For example, to produce the figure below, we have run the following command (where predictions in the output directory are produced by AcrosticSleuth):
 
 ```bash
 python3 scorer.py RecallFigure.png EN,labels/en.tsv,../../output/en.tsv,English RU,labels/ru.tsv,../../output/ru.tsv,Russian FR,labels/fr.tsv,../../output/fr.tsv,French
@@ -68,7 +68,7 @@ During evaluation, all such "split" acrostics are counted as a single true posit
 
 Note: the following additional abbreviations automatically prevent `scorer.py` from using the acrostic during scoring to maintain fairness:
 - i is for "international" -- acrostic in a language that is different from the base language of the text. 
-- t is for "tool" -- acrostic found by AcrosticScout (but not explicitly referred to or mentioned on WikiSource as an acrostic)
+- t is for "tool" -- acrostic found by AcrosticSleuth (but not explicitly referred to or mentioned on WikiSource as an acrostic)
 Such acrostics should not be counted towards the tool's recall but could be counted toward precision.
 - 2,3,4,6,8, etc. identify acrostics formed by every second/third/etc. letter of each line
 - w is for "word-level" acrostic
@@ -80,11 +80,11 @@ Such "acrostics" should not be counted towards the tool's recall but could be co
 
 ## What is the state of the art result?
 
-[AcrosticScout](https://github.com/acrostics/acrostic-scout) reaches recall of over 50% within the first 100 results for English and Russian, and recall rises to up to 80% when considering more results.
+[AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth) reaches recall of over 50% within the first 100 results for English and Russian, and recall rises to up to 80% when considering more results.
 Read more in our [paper]():
 
 ![](RecallFigure.svg)
 
 ## How to cite this?
 
-Fedchin, A., Cooperman, I., Chaudhuri, P., Dexter, J.P. 2024 "AcrosticScout: Differentiating True Acrostics from Random Noise in Multilingual Corpora Using Probabilistic Ranking". Forthcoming
+Fedchin, A., Cooperman, I., Chaudhuri, P., Dexter, J.P. 2024 "AcrosticSleuth: Differentiating True Acrostics from Random Noise in Multilingual Corpora Using Probabilistic Ranking". Forthcoming
