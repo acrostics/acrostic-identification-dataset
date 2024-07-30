@@ -145,9 +145,10 @@ def get_recall(filename, truth_file, lang, log=False):
 
 def main(args):
     fig, ax = plt.subplots(layout='constrained')
-    for language, labels, predictions, name in args.data:
+    line_styles = ['dotted', 'dashed', 'dashdot', ((0, (1, 10))), (0, (5, 10)), (0, (5, 1)), (0, (3, 5, 1, 5, 1, 5))]
+    for i, (language, labels, predictions, name) in enumerate(args.data):
        recall = get_recall(predictions, labels, lang=language, log=args.verbose)
-       plt.plot(np.arange(len(recall)), recall, label=name, linestyle="--", linewidth=3)
+       plt.plot(np.arange(len(recall)), recall, label=name, linestyle=line_styles[i % len(line_styles)], linewidth=3)
 
     plt.legend(loc='upper left', fontsize=36)
     ax.set_ylabel('Recall', fontsize=50)
