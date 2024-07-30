@@ -2,7 +2,7 @@
 
 **Acrostic Identification Task Dataset** is a curated collection of acrostics from the English, Russian, and French subdomains of the WikiSource database.
 The dataset is intended for evaluation of tools such as [AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth), which aim to identify acrostics from large corpora of texts.
-You can read more about the methodology in our upcoming paper ([preprint]()).
+You can read more about the methodology in our upcoming paper ([link to preprint to appear soon]()).
 
 ### Table of Contents
 
@@ -81,7 +81,7 @@ Such "acrostics" should not be counted towards the tool's recall but could be co
 ## What is the state of the art result?
 
 [AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth) reaches recall of over 50% within the first 100 results for English and Russian, and recall rises to up to 80% when considering more results.
-Read more in our [paper]():
+Read more in our paper ([link to preprint to appear soon]()):
 
 ![](RecallFigure.svg)
 
