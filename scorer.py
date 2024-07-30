@@ -107,6 +107,7 @@ def get_recall(filename, truth_file, lang, log=False):
     recall = np.zeros(len(output))
     tp = 0
     all_tp = len(true_labels)
+    removed = []
     for k in range(len(output)):
         title, candidate, _, _, _, cluster, _, _, prefix, postfix, _ = output[k]
         query_full = prefix + cluster + postfix
@@ -122,8 +123,18 @@ def get_recall(filename, truth_file, lang, log=False):
             if log:
                 print(f"Hit {label[0][0]}, k={k}, tp={tp}, all_tp={all_tp}, recall={tp / all_tp}")
             true_labels.remove(label)
-        # if not to_remove and log and k < 2000:
-            # print(f"Miss {candidate} ({query_full}) in {title}")
+            removed.append(label)
+        """if not to_remove and log and k < 3000:
+            already_counted = False
+            for label in removed:
+                for acrostic, page in label:
+                    if title == page and (acrostic in query or len(find_LCS(acrostic, query)) >= 5):
+                        already_counted = True
+                        break
+                if already_counted:
+                    break
+            if not already_counted:
+                print("\t".join(output[k]))"""
         recall[k] = tp/all_tp
     if log:
         for label in true_labels:
