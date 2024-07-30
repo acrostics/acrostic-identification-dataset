@@ -87,4 +87,4 @@ Read more in our [paper]():
 
 ## How to cite this?
 
-Fedchin, A., Cooperman, I., Chaudhuri, P., Dexter, J.P. 2024 "AcrosticSleuth: Differentiating True Acrostics from Random Noise in Multilingual Corpora Using Probabilistic Ranking". Forthcoming
+Fedchin, A., Cooperman, I., Chaudhuri, P., Dexter, J.P. 2024 "AcrosticSleuth: Probabilistic Differentiation and Ranking of True Acrostics in Multilingual Corpora". Forthcoming
