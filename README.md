@@ -42,41 +42,46 @@ These will include:
 - [May 1st 2024 dump of the Russian WikiSource](https://dumps.wikimedia.org/ruwikisource/20240501/ruwikisource-20240501-pages-meta-current.xml.bz2)
 
 To score a tool's predictions against the manually created labels, use the `scorer.py` script.
-The script will produce a figure that plots recall vs # of results, like you see below ([What is the state-of-the-art result?](#what-is-the-state-of-the-art-result)).
-The first argument should be the name of the figure to be created.
-The script accepts an arbitrary number of 4-element comma-separated tuples, where each tuple consists of 
+The script will produce a figure that plots recall\precision\f1 vs # of results, like you see below ([What is the state-of-the-art result?](#what-is-the-state-of-the-art-result)).
+The first argument should be the name of the metric to plot, and the second argument should be the name of the figure to be created.
+The script then accepts an arbitrary number of 4-element comma-separated tuples, where each tuple consists of 
 (i) language code, (ii) label file from this repository, (iii) file with predictions, and (iv) name of the comparison
 
 For example, to produce the figure below, we have run the following command (where predictions in the output directory are produced by AcrosticSleuth):
 
 ```bash
-python3 scorer.py RecallFigure.png EN,labels/en.tsv,../../output/en.tsv,English RU,labels/ru.tsv,../../output/ru.tsv,Russian FR,labels/fr.tsv,../../output/fr.tsv,French
+python3 scorer.py recall RecallFigure.png EN,labels/en.tsv,../../output/en.tsv,English RU,labels/ru.tsv,../../output/ru.tsv,Russian FR,labels/fr.tsv,../../output/fr.tsv,French
 ```
 
 ## Categories of acrostics
 
 The following is a list of abbreviations/labels we use to categorize acrostics.
 
+Acrostics that are counted towards recall and precision (unless also marked with i, n, w, e, o, or a number, in which case see below):
 - m is for "mentioned" -- an acrostic explicitly referenced as such on WikiSource.
-- f is for "formated" -- an acrostic formatted as such on WikiSource (initial letters of a poem are highlighted in red, rotated by 90 degrees, etc.) 
-- s is for "split" -- this abbreviation is used to identify separate acrostics that should be counted as one for evaluation purposes.
+- f is for "formated" -- an acrostic formatted as such on WikiSource (initial letters of a poem are highlighted in red, rotated by 90 degrees, etc.)
+
+Acrostics that are counted towards precision but not recall (unless also marked w, e, o, or a number, in which case see below):
+- i is for "international" -- acrostic in a language that is different from the base language of the text. 
+- t is for "tool" -- acrostic found by AcrosticSleuth (but not explicitly referred to or mentioned on WikiSource as an acrostic)
+Such acrostics should not be counted towards the tool's recall but could be counted toward precision.
+- n is for "not a true acrostic" -- an acrostic erroneously created during OCR.
+Often this happens when the source text has a table with a vertical entry.
+Such "acrostics" should not be counted towards the tool's recall but could be counted toward precision.
+
+Acrostics that are not counted towards either precision or recall:
+- 2,3,4,6,8, etc. identify acrostics formed by every second/third/etc. letter of each line
+- w is for "word-level" acrostic
+- e is for "end" acrostic aka telestic
+- o is for "omitted" -- a page that exists in a .djvu file and might be added to WikiSource in the future but is not present in the backup dump used to create the dataset.
+
+Additional labels:
+- s is for "split" -- this abbreviation is used to identify separate acrostics that should be counted as one when calculating recall.
 This happens when either of the following is true:
 (i) a single acrostic is split between multiple WikiSource pages,
 (ii) two separate acrostics are located very close to each other on the same WikiSource page (we chose to use within 10 lines as the criterion), or
 (iii) the same acrostic poem is reproduced multiple times on different WikiSource pages. 
-During evaluation, all such "split" acrostics are counted as a single true positive if the tool identifies at least one part or as a single false negative if the tool does not identify either part.
-
-Note: the following additional abbreviations automatically prevent `scorer.py` from using the acrostic during scoring to maintain fairness:
-- i is for "international" -- acrostic in a language that is different from the base language of the text. 
-- t is for "tool" -- acrostic found by AcrosticSleuth (but not explicitly referred to or mentioned on WikiSource as an acrostic)
-Such acrostics should not be counted towards the tool's recall but could be counted toward precision.
-- 2,3,4,6,8, etc. identify acrostics formed by every second/third/etc. letter of each line
-- w is for "word-level" acrostic
-- e is for "end" acrostic aka telestic
-- n is for "not a true acrostic" -- an acrostic erroneously created during OCR.
-Often this happens when the source text has a table with a vertical entry.
-Such "acrostics" should not be counted towards the tool's recall but could be counted toward precision.
-- o is for "omitted" -- a page that exists in a .djvu file and might be added to WikiSource in the future but is not present in the backup dump used to create the dataset.
+During evaluation, all such "split" acrostics are counted as a single acrostic when calculating recall.
 
 ## What is the state of the art result?
 
