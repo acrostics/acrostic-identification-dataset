@@ -1,6 +1,6 @@
-# Acrostic Identification Task Dataset
+# Acrostic Identification Dataset
 
-**Acrostic Identification Task Dataset** is a curated collection of acrostics from the English, Russian, and French subdomains of the WikiSource database.
+**Acrostic Identification Dataset (AcrostID)** is a curated collection of acrostics from the English, Russian, and French subdomains of the WikiSource database.
 The dataset is intended for evaluation of tools such as [AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth), which aim to identify acrostics from large corpora of texts.
 You can read more about the methodology in our upcoming paper ([link to preprint to appear soon]()).
 
@@ -17,7 +17,7 @@ You can read more about the methodology in our upcoming paper ([link to preprint
 This repository contains the following:
 - `get_data.sh` -- a bash script that downloads and preprocesses the exact versions of WikiSource subdomain backup dumps that have been used during the dataset curation.
 The script uses [wikiextractor](https://github.com/acrostics/wikiextractor) (included as a submodule) to clean and preprocess the raw XML files.
-Since WikiSource evolves constantly, it is preferable that any tool that is evaluated on the Acrostic Identification Task Dataset uses these specific versions of WikiSource and preprocess them using `wikiextractor`.
+Since WikiSource evolves constantly, it is preferable that any tool that is evaluated on AcrostID uses these specific versions of WikiSource and preprocess them using `wikiextractor`.
 - `labels` -- the directory with the acrostics proper.
 Each file corresponds to a language subdomain.
 Each line in a file is a tab-separated tuple, where the first element
