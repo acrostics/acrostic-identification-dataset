@@ -2,7 +2,7 @@
 
 **Acrostic Identification Dataset (AcrostID)** is a curated collection of acrostics from the English, Russian, and French subdomains of the WikiSource database.
 The dataset is intended for evaluation of tools such as [AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth), which aim to identify acrostics from large corpora of texts.
-You can read more about the methodology in our upcoming paper ([link to preprint to appear soon]()).
+You can read more about the methodology in our upcoming paper ([link to preprint](https://doi.org/10.48550/arXiv.2408.04427)).
 
 ### Table of Contents
 
@@ -83,13 +83,17 @@ This happens when either of the following is true:
 (iii) the same acrostic poem is reproduced multiple times on different WikiSource pages. 
 During evaluation, all such "split" acrostics are counted as a single acrostic when calculating recall.
 
+The figure below outlines the methods by which acrostics were collected to form AcrostID:
+
+![](Distribution.svg)
+
 ## What is the state of the art result?
 
 [AcrosticSleuth](https://github.com/acrostics/acrostic-sleuth) reaches recall of over 50% within the first 100 results for English and Russian, and recall rises to up to 80% when considering more results.
-Read more in our paper ([link to preprint to appear soon]()):
+Read more in our paper ([link to preprint](https://doi.org/10.48550/arXiv.2408.04427)):
 
 ![](RecallFigure.svg)
 
 ## How to cite this?
 
-Fedchin, A., Cooperman, I., Chaudhuri, P., Dexter, J.P. 2024 "AcrosticSleuth: Probabilistic Differentiation and Ranking of True Acrostics in Multilingual Corpora". Forthcoming
+Fedchin, A., Cooperman, I., Chaudhuri, P., Dexter, J.P. 2024 "AcrosticSleuth: Probabilistic Identification and Ranking of Acrostics in Multilingual Corpora". https://doi.org/10.48550/arXiv.2408.04427
